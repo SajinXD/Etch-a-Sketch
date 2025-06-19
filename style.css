@@ -3,7 +3,7 @@ body {
     height: 100%;
     overflow: hidden ;
     font-size: 25px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:'Courier New', Courier, monospace;
     background-color: rgb(214, 224, 232);
 }
 
@@ -19,6 +19,7 @@ body {
 
 .btn{
     margin: 5px 10px 20px 10px;
+    font-family:'Courier New', Courier, monospace;
 }
 
 .group-btn{
