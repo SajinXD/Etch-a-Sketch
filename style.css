@@ -48,5 +48,31 @@ body {
 }
 
 #customizer{
-  width: 30px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#customizer::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+}
+
+#customizer::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
 }
