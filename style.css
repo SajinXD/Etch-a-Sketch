@@ -20,6 +20,10 @@ body {
 .btn{
     margin: 5px 10px 20px 10px;
     font-family:'Courier New', Courier, monospace;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 10px;
+    padding:4px 10px;
 }
 
 .group-btn{
@@ -41,4 +45,8 @@ body {
     flex-wrap: wrap;
     width: 500px;
     height: 500px;
+}
+
+#customizer{
+  width: 30px;
 }
