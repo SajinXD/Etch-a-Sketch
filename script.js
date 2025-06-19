@@ -73,3 +73,5 @@ scolor.addEventListener('click', (e)=>{
 customizer.addEventListener('change', (e)=>{
     SINGLECOLOR_MODE = customizer.value;
 })
+
+document.querySelector(".date").innerHTML = new Date().getFullYear();
