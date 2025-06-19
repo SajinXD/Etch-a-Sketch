@@ -13,10 +13,14 @@ function createGrid(size){
         row.style.height = `${gridSize}px`;
         row.style.width = `${gridSize}px`;
         row.style.backgroundColor = "white";
+        row.dataset.interaction = 0;
         container.appendChild(row);
     }
     document.querySelectorAll('.gridSquare').forEach(function(singleDiv){
     singleDiv.addEventListener('mouseover', (e) =>{
+        let currentCount = parseInt(e.target.dataset.interaction);
+        currentCount++;
+        e.target.dataset.interaction = currentCount;
         e.target.style.backgroundColor = `${getRandomColor()}`;
     })
 });
