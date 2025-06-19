@@ -4,12 +4,7 @@ body {
     overflow: hidden ;
     font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
-    background-color: aliceblue;
-}
-
-.grid-square{
-    width: 7.8125px;
-    height: 7.8125px;
+    background-color: rgb(214, 224, 232);
 }
 
 .upper-part{
