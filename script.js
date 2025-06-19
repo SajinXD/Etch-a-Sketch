@@ -1,4 +1,6 @@
 const MAX_GRID_SIZE = 500;
+let RAINBOW_MODE = false;
+let SINGLECOLOR_MODE = "black";
 
 function createGrid(size){
     let gridSize = MAX_GRID_SIZE / size;
@@ -15,22 +17,31 @@ function createGrid(size){
     }
     document.querySelectorAll('.gridSquare').forEach(function(singleDiv){
     singleDiv.addEventListener('mouseover', (e) =>{
-        e.target.style.backgroundColor = "black";
+        e.target.style.backgroundColor = `${getRandomColor()}`;
     })
 });
 }
 
 createGrid(64); //default grid-size.
 
-function getBackgroundColor(){
-
+function getRandomValue(x){
+    return Math.floor(Math.random() * x);
 }
+
+function getRandomColor(){
+    if(RAINBOW_MODE){
+        return `rgb(${getRandomValue(256)}, ${getRandomValue(256)}, ${getRandomValue(256)})`;
+    }else{
+        return SINGLECOLOR_MODE;
+    }
+}
+
 
 let resetBtn = document.querySelector('#reset');
 let inputBtn = document.querySelector('#input');
 let scolor = document.querySelector('#scolor');
 let rainbow = document.querySelector('#rainbow');
-
+let customizer = document.querySelector('#customizer');
 
 resetBtn.addEventListener("click", (e)=>{
     document.querySelectorAll('.gridSquare').forEach((grid)=>{
@@ -49,4 +60,16 @@ inputBtn.addEventListener("click", (e)=>{
             alert("Enter only number from 1 to 100");
         }
     }
+})
+
+rainbow.addEventListener('click', (e)=>{
+    RAINBOW_MODE = true;
+})
+
+scolor.addEventListener('click', (e)=>{
+    RAINBOW_MODE = false;
+})
+
+customizer.addEventListener('change', (e)=>{
+    SINGLECOLOR_MODE = customizer.value;
 })
