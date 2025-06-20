@@ -1,7 +1,7 @@
 # Etch-a-Sketch
 Project: Etch-a-Sketch
 
-- create a webpage with 16x16 grind of square of divs using Js.
+- create a webpage with 64x64 grind of square of divs using Js.
 - arrange divs with flexbox and setup a hover effect backgroundcolor "black".
 - 4 button:
     - select grid: asks the user the number of grid to generate in the container,
