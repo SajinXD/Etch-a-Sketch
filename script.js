@@ -21,7 +21,12 @@ function createGrid(size){
         let currentCount = parseInt(e.target.dataset.interaction);
         currentCount++;
         e.target.dataset.interaction = currentCount;
-        e.target.style.backgroundColor = `${getRandomColor()}`;
+        
+        let opacity = currentCount / 10;
+        if(opacity > 1) opacity = 1;
+        
+        let baseColor = getRandomColor();
+        e.target.style.background = `linear-gradient(rgba(0,0,0,${opacity}), rgba(0,0,0,${opacity})), ${baseColor}`;
     })
 });
 }
@@ -49,7 +54,8 @@ let customizer = document.querySelector('#customizer');
 
 resetBtn.addEventListener("click", (e)=>{
     document.querySelectorAll('.gridSquare').forEach((grid)=>{
-        grid.style.backgroundColor = "white";
+        grid.style.background = "white";
+        grid.dataset.interaction = 0;
     })
 })
 
@@ -67,15 +73,33 @@ inputBtn.addEventListener("click", (e)=>{
 })
 
 rainbow.addEventListener('click', (e)=>{
+    scolor.classList.remove('pressed');
+    rainbow.classList.add('pressed');
     RAINBOW_MODE = true;
 })
 
 scolor.addEventListener('click', (e)=>{
+    rainbow.classList.remove('pressed');
+    scolor.classList.add('pressed');
     RAINBOW_MODE = false;
 })
 
 customizer.addEventListener('change', (e)=>{
     SINGLECOLOR_MODE = customizer.value;
+    
+    // too many BUGs, 
+    // this is to change the button accordingly with the type: color selected.
+    // problems occurs when it is change into white / black colors ++ hover.
+
+
+    // if(SINGLECOLOR_MODE.toLowerCase === "#ffffff"){
+    //     scolor.setAttribute("style", "color: black; background-color: white;");
+    // }else if(SINGLECOLOR_MODE.toLowerCase === "#000000"){
+    //     scolor.setAttribute("style", "color: white; background-color: black;");
+    // }
+    // else{
+    //     scolor.style.backgroundColor = SINGLECOLOR_MODE;
+    // }
 })
 
 document.querySelector(".date").innerHTML = new Date().getFullYear();
