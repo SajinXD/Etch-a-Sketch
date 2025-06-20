@@ -2,7 +2,7 @@
 Project: Etch-a-Sketch
 
 - create a webpage with 64x64 grind of square of divs using Js.
-- arrange divs with flexbox and setup a hover effect backgroundcolor "black".
+- arrange divs with flexbox and setup a hover effect backgroundcolor "black" as default but change be changed into rainbow and specific color.
 - 4 button:
     - select grid: asks the user the number of grid to generate in the container,
     - rainbow color: selects RAINBOW_MODE,
